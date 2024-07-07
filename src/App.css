@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Define light theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --secondary-text-color: #6b7280; /* Corresponds to text-gray-600 */
+  --card-bg-color: #ffffff;
+  --card-text-color: #000000;
+  --link-color: #10b981; /* Corresponds to text-green-500 */
+  --link-hover-color: #047857; /* Corresponds to text-green-700 */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Define dark theme variables */
+[data-theme="dark"] {
+  --bg-color: #d3d3d3; /* Dark background color */
+  --text-color: #ffffff; /* Light text color */
+  --secondary-text-color: #9ca3af; /* Lighter gray text */
+  --card-bg-color: #374151; /* Dark card background */
+  --card-text-color: #ffffff; /* White text for cards */
+  --link-color: #34d399; /* Light green link color */
+  --link-hover-color: #065f46; /* Dark green hover color */
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Apply the variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme change */
+}
+
+.text-gray-600 {
+  color: var(--secondary-text-color);
+}
+
+.bg-white {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.text-green-500 {
+  color: var(--link-color);
+  transition: color 0.3s;
+}
+
+.text-green-500:hover {
+  color: var(--link-hover-color);
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Override the image color for dark theme */
+[data-theme="dark"] img {
+  filter: brightness(0.8); /* Reduce brightness for dark theme */
+}
+
+/* Optional: Style for the toggle button */
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--link-color);
+}
